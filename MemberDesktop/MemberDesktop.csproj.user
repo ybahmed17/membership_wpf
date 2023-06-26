@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\membe\OneDrive\Documents\2023\WPF\MemberDesktop\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="View\Add.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\BackupWaiting.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Edit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\HomePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\MemberView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Renew.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Search.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Add.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\BackupWaiting.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Detail.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Edit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\HomePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\MemberView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Renew.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Search.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

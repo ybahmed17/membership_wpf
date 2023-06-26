@@ -1,0 +1,64 @@
+﻿<Window x:Class="MemberDesktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MemberDesktop"
+        mc:Ignorable="d"
+        WindowState="Maximized" WindowStyle="ToolWindow"
+        Title="MainWindow" MinWidth="800" MinHeight="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Backup" Click="Backup_Click" />
+                    <MenuItem Header="_Exit"  Click="Exit_Click"/>
+                </MenuItem>
+                <MenuItem Header="Membership">
+                    <MenuItem Header="_Search Member" Click="Search_Click">
+                       
+                    </MenuItem>
+                    <MenuItem Header="_Add Member" Click="Add_Click" />
+                    
+                </MenuItem>
+               
+                <MenuItem Header="Database">
+                    <MenuItem Header="_TestDB" 
+                              Name="MenuTestDB"
+                  IsCheckable="True"
+                  Checked="OnTestDBChecked"
+                  Unchecked="OnTestDBUnchecked"/>
+
+                    <MenuItem Header="_ProdDB" 
+                              Name="MenuProdDB"
+                  IsCheckable="True" IsChecked="True"
+                  Checked="OnProdDBChecked"
+                  Unchecked="OnProdDBUnchecked"/>
+                  
+                </MenuItem>
+            </Menu>
+           
+        </DockPanel>
+        <StackPanel x:Name="HEADER" Grid.Row="1" Background="Red" ></StackPanel>
+        <Frame Grid.Row="2"
+            Content="XFrame#1"
+            x:Name="XFrame"
+            NavigationUIVisibility="Hidden"
+            
+           
+            HorizontalAlignment="Stretch"
+            HorizontalContentAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            VerticalContentAlignment="Stretch"
+            Margin="5,0,0,0" BorderBrush="LightSeaGreen" BorderThickness="4"
+          
+           />
+    </Grid>
+
+
+</Window>

@@ -1,0 +1,115 @@
+﻿<Page x:Class="MemberDesktop.View.Detail"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MemberDesktop.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Detail">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ListView Grid.Row="0" Grid.Column="0" x:Name="listViewMembers" ItemsSource="{Binding MemberCollection}" 
+                      ScrollViewer.VerticalScrollBarVisibility="Visible" 
+                      HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"
+                      AlternationCount="2">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<Border BorderThickness="3" Background="LightBlue" BorderBrush="Navy" HorizontalAlignment="Stretch" CornerRadius="3" Padding="3">-->
+                        <StackPanel Margin="4">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource NameStyle}"   Text="{Binding MemberTitle}"/>
+                                <TextBlock Style="{StaticResource NameStyle}"   Text="{Binding first_name}" Margin="5,0,0,1" />
+                                <TextBlock  Style="{StaticResource NameStyle}"  Text="{Binding middle_name}" Margin="5,0,0,1" />
+                                <TextBlock  Style="{StaticResource NameStyle}"  Text="{Binding last_name}" Margin="5,0,0,1" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                <TextBlock  Margin="0,0,5,1"  Text="{Binding Path=street}"/>
+                                <TextBlock  Margin="0,0,5,1"  Text="{Binding Path=city}"/>
+                                <TextBlock  Margin="0,0,5,1"  Text="{Binding Path=state}"/>
+                                <TextBlock  Margin="0,0,5,1"  Text="{Binding Path=zip}"/>
+                            </StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Style="{StaticResource ListFieldLabelStyle}" Grid.Row="0" Grid.Column="0">Member ID:</TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"  Text="{Binding member_id}" />
+                                <TextBlock Style="{StaticResource ListFieldLabelStyle}" Grid.Row="0" Grid.Column="3">Family ID:</TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="4"  Text="{Binding family_id}" />
+                                <TextBlock Style="{StaticResource ListFieldLabelStyle}" Grid.Row="0" Grid.Column="5">Gender:</TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="6"  Text="{Binding Gender}"/>
+
+                                <TextBlock  Style="{StaticResource ListFieldLabelStyle}" Grid.Row="1" Grid.Column="0" >Cell Phone:</TextBlock>
+                                <TextBlock  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding PhoneCell}" />
+                                <TextBlock  Style="{StaticResource ListFieldLabelStyle}" Grid.Row="1" Grid.Column="3" >Home Phone:</TextBlock>
+                                <TextBlock  Grid.Row="1" Grid.Column="4" Text="{Binding PhoneHome}" />
+                                <TextBlock  Style="{StaticResource ListFieldLabelStyle}" Grid.Row="1" Grid.Column="5" >Email:</TextBlock>
+                                <TextBlock  Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="2" Text="{Binding email}" />
+
+                                <TextBlock  Style="{StaticResource ListFieldLabelStyle}" Grid.Row="2" Grid.Column="0">Membership Type:</TextBlock>
+                                <TextBlock  Grid.Row="2" Grid.Column="1" Text="{Binding MembershipType}"/>
+                                <TextBlock  Grid.Row="2" Grid.Column="2" Text="{Binding MembershipStatus}"/>
+
+                                <TextBlock  Style="{StaticResource ListFieldLabelStyle}" Grid.Row="2" Grid.Column="3" >Application Date:</TextBlock>
+                                <TextBlock  Grid.Row="2" Grid.Column="4" Text="{Binding Path=application_date, StringFormat=MM-dd-yyyy}"/>
+
+                                <TextBlock  Style="{StaticResource ListFieldLabelStyle}" Grid.Row="2" Grid.Column="5">Member Since:</TextBlock>
+                                <TextBlock  Grid.Row="2" Grid.Column="6" Text="{Binding year_started}" />
+                            </Grid>
+
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Style="{StaticResource ListFieldLabelStyle}" Margin="1,5,5,5" >Contact Preference:</TextBlock>
+                                <TextBlock  Margin="1,5,5,5"  Text="{Binding Path=ContactPreference}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock  Margin="1,0,10,10"  Text="{Binding Path=comments}"/>
+                            </StackPanel>
+
+                        </StackPanel>
+                        <!--</Border>-->
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <TextBlock Grid.Row="1" Grid.Column="0" x:Name="HeaderYearlyMember" Style="{StaticResource HeaderStyle}">Member Yearly Renewals</TextBlock>
+            <DataGrid Grid.Row="2" Grid.Column="0" 
+                      x:Name="GridYearlyMember"
+                      ItemsSource="{Binding}"></DataGrid>
+            <TextBlock Grid.Row="3" Grid.Column="0" x:Name="HeaderYearlySpouse" Style="{StaticResource HeaderStyle}">Spouse Yearly Renewals</TextBlock>
+            <DataGrid Grid.Row="4" Grid.Column="0" 
+                      x:Name="GridYearlySpouse"
+                      ItemsSource="{Binding}"></DataGrid>
+            <TextBlock Grid.Row="5" Grid.Column="0" x:Name="HeaderAuditMember" Style="{StaticResource HeaderStyle}">Member Audit Hx</TextBlock>
+            <DataGrid Grid.Row="6" Grid.Column="0" 
+                      x:Name="GridAuditMember"
+                      ItemsSource="{Binding}"></DataGrid>
+            <TextBlock Grid.Row="7" Grid.Column="0" x:Name="HeaderAuditSpouse" Style="{StaticResource HeaderStyle}">Spouse Audit Hx</TextBlock>
+            <DataGrid Grid.Row="8" Grid.Column="0" 
+                      x:Name="GridAuditSpouse"
+                      ItemsSource="{Binding}"></DataGrid>
+        </Grid>
+    </ScrollViewer>
+</Page>

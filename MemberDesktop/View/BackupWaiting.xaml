@@ -1,0 +1,34 @@
+﻿<Window x:Class="MemberDesktop.View.BackupWaiting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MemberDesktop.View"
+        mc:Ignorable="d"
+        Title="BackupWaiting" Height="200" Width="400"
+        Name="WaitWindow"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Border Background="AliceBlue" CornerRadius="3" 
+            BorderThickness="2" BorderBrush="OrangeRed"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Height="200" Width="400"
+            
+            >
+        <TextBlock x:Name="WaitingText"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="16"
+                   FontWeight="Bold"
+                   >
+            
+           ......
+
+        </TextBlock>
+    </Border>
+    
+
+ 
+</Window>
