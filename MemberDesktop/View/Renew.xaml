@@ -117,7 +117,7 @@
                     DisplayMemberPath="Name" 
                     VerticalAlignment="Center"
                     />
-                <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Red" >!! If renewing 2022 and 2023 , renew 2022 before 2023</TextBlock>
+            
                 
                 <Label Grid.Row="4" Grid.Column="0">Renewed By:</Label>
                 <ComboBox  Grid.Row="4" Grid.Column="1"  x:Name="ComboRenewedBy"  ItemsSource="{Binding Admins}" 
