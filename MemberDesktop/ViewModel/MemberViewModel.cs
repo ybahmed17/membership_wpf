@@ -88,7 +88,8 @@ namespace MemberDesktop.ViewModel
             renewal_year = new ObservableCollection<Category>();
             renewal_year.Add(new Category("2023", "2023"));
             renewal_year.Add(new Category("2024", "2024"));
-            
+            renewal_year.Add(new Category("2025", "2025"));
+
 
 
         }
